@@ -1,7 +1,7 @@
 ﻿using Raylib_cs;
 using System.Numerics;
 
-namespace CountyGame;
+namespace PoliticsGame;
 static class Program {
     public static void Main() {
 
@@ -9,13 +9,11 @@ static class Program {
         const int screenWidth = 1280;
         const int screenHeight = 720;
 
-        const float centerX = screenWidth / 2.0f;
-        const float centerY = screenHeight / 2.0f;
+        const float centerX = screenWidth / 2;
+        const float centerY = screenHeight / 2;
 
         Vector2 position = new Vector2(Raylib.GetMouseX(), Raylib.GetMouseY());
-        Vector2 size = new Vector2(40.0f, 40.0f);
-        Color blue = new Color(0, 0, 255, 255);
-        int FPS = Raylib.GetFPS();
+        Vector2 size = new Vector2(40, 40);
 
         // Initialize Window
         Raylib.InitWindow(screenWidth, screenHeight, "CountyGame");
@@ -26,7 +24,8 @@ static class Program {
             Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.WHITE);
                 Raylib.DrawFPS(10, 10);
-                Raylib.DrawRectangleV(position, size, blue);
+                Raylib.DrawRectangleV(position, size, Color.BLACK);
+                Raylib.DrawText("Testing", centerX, centerY, 20, Color.BLACK);
             Raylib.EndDrawing();
         }
         
